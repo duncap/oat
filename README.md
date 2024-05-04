@@ -19,7 +19,7 @@ Ensure you have Rust installed on your system. You can install Rust via [rustup]
 
 #### 1. Clone the Repository:
 ```bash
-git clone https://github.com/yourusername/oat.git
+git clone https://github.com/duncap/oat.git
 cd oat
 ```
 
