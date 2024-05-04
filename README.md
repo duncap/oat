@@ -13,28 +13,29 @@ Ensure you have Rust installed on your system. You can install Rust via [rustup]
 
 ### Clone the Repository:
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 git clone https://github.com/yourusername/oat.git
 cd oat
 ```
 
 ### Compile the Source:
+```bash
 cargo build --release
+```
 
 ### Install:
 The build process will produce an executable in the target/release directory. You can move this executable to a suitable directory in your PATH for easier access:
-
+```bash
 sudo cp target/release/oat /usr/local/bin/
-
+```
 ## Usage
 To compile OATLANG code using OAT, run the following command:
-
+```bash
 oat 'COMMAND{"YourArgument"}$'
-
+```
 For example, to compile a print statement into a language, you would use:
-
+```bash
 oat 'PRINT{"Hello World"}$'
-
+```
 Follow the on-screen prompts to select the target language.
 
 Community and Contributions
@@ -48,4 +49,4 @@ Submit a Pull Request: Submit a pull request to the main OAT repository after ma
 ## Licensing
 OAT is licensed under the Lesser GNU General Public License (LGPL). This allows the software to be freely used and modified. The LGPL ensures that OAT and any derivatives remain open-source, thus supporting community-driven development and ensuring that enhancements to the core components are accessible to all users.
 
-Adhering to this license, OAT supports open and proprietary software developments, making it ideal for various applications.
+This license allows OAT to support open and proprietary software developments, making it ideal for various applications.
