@@ -12,8 +12,8 @@ To start using OAT, follow these installation steps:
 Ensure you have Rust installed on your system. You can install Rust via [rustup](https://rustup.rs/).
 
 ### Clone the Repository:
-git clone https://github.com/yourusername/oat.git
-cd oat
+`git clone https://github.com/yourusername/oat.git`
+`cd oat`
 
 ### Compile the Source:
 cargo build --release
