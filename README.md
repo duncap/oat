@@ -9,7 +9,7 @@ Installation
 To start using OAT, follow these installation steps:
 
 ## Prerequisites:
-Ensure you have Rust installed on your system. You can install Rust via (rustup)[https://rustup.rs/].
+Ensure you have Rust installed on your system. You can install Rust via [rustup](https://rustup.rs/).
 
 ### Clone the Repository:
 git clone https://github.com/yourusername/oat.git
