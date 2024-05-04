@@ -17,18 +17,18 @@ To start using OAT, follow these installation steps:
 ### Prerequisites:
 Ensure you have Rust installed on your system. You can install Rust via [rustup](https://rustup.rs/).
 
-#### Clone the Repository:
+#### 1. Clone the Repository:
 ```bash
 git clone https://github.com/yourusername/oat.git
 cd oat
 ```
 
-#### Compile the Source:
+#### 2. Compile the Source:
 ```bash
 cargo build --release
 ```
 
-#### Install:
+#### 3. Install:
 The build process will produce an executable in the **target/release** directory. You can move this executable to a suitable directory in your PATH for easier access:
 ```bash
 sudo cp target/release/oat /usr/local/bin/
@@ -48,9 +48,12 @@ Follow the on-screen prompts to select the target language.
 We actively encourage contributions, whether you're fixing bugs, adding new features, or improving documentation. Check this repository for issues that need attention.
 
 ## How to Contribute
-Fork the Repository: Make a copy of the project to your GitHub account.
-Create a Branch: Make changes in a new branch in your fork.
-Submit a Pull Request: Submit a pull request to the main OAT repository after making changes. Include a clear description of your improvements.
+#### 1. Fork the Repository: 
+Make a copy of the project to your GitHub account.
+#### 2. Create a Branch: 
+Make changes in a new branch in your fork.
+#### 3. Submit a Pull Request: 
+Submit a pull request to the main OAT repository after making changes. Include a clear description of your improvements.
 
 ## Licensing
 OAT is licensed under the Lesser GNU General Public License (LGPL). This allows the software to be freely used and modified. The LGPL ensures that OAT and any derivatives remain open-source, thus supporting community-driven development and ensuring that enhancements to the core components are accessible to all users.
