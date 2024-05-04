@@ -1,5 +1,5 @@
 # OAT (Oval Abstract Trees)
-OAT is an innovative, open-source protocol for cross-language compilation. It leverages a sophisticated file indexing system to compile OATLANG code into multiple popular programming languages, enhancing interoperability and code reuse across software development projects.
+**OAT** is an innovative, open-source protocol for cross-language compilation. It leverages a sophisticated file indexing system to compile OATLANG code into multiple popular programming languages, enhancing interoperability and code reuse across software development projects.
 
 ## Key Features
 ####  Cross-Language Compilation: 
@@ -29,7 +29,7 @@ cargo build --release
 ```
 
 #### Install:
-The build process will produce an executable in the target/release directory. You can move this executable to a suitable directory in your PATH for easier access:
+The build process will produce an executable in the **target/release** directory. You can move this executable to a suitable directory in your PATH for easier access:
 ```bash
 sudo cp target/release/oat /usr/local/bin/
 ```
