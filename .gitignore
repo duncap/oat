@@ -1,0 +1,16 @@
+# Ignore build directory
+target/
+
+# Ignore intermediate files
+*.o
+*.obj
+
+# Ignore CMake files
+CMakeFiles/
+
+# Ignore IDE files
+.vscode/
+.idea/
+
+# Ignore Rust metadata
+Cargo.lock
