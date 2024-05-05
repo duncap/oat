@@ -34,15 +34,20 @@ The build process will produce an executable in the **target/release** directory
 sudo cp target/release/oat /usr/local/bin/
 ```
 ## Usage
-To compile OATLANG code using OAT, run the following command:
-```bash
-oat 'COMMAND{"YourArgument"}$'
+To compile OATLANG code using OAT, you must first create an **oat** file. Here's an example:
+```javascript
+PRINT_STR{"Hello World!"}$
 ```
-For example, to compile a print statement into a language, you would use:
+
+After creating your file, run the following command:
 ```bash
-oat 'PRINT{"Hello World"}$'
+oat <name>.oat bin
 ```
-Follow the on-screen prompts to select the target language.
+OAT will compile the OATLANG file to binary, which then you can run this to execute the binary file.
+
+```bash
+./<name>
+```
 
 ## Community and Contributions
 We actively encourage contributions, whether you're fixing bugs, adding new features, or improving documentation. Check this repository for issues that need attention.
