@@ -28,9 +28,10 @@ cd oat
 cargo build --release
 ```
 ### 3. Install
-The build process will produce an executable in the target/release directory. You can move this executable to a suitable directory in your PATH for easier access:
+The build process will produce an executable in the **target/release** directory. You can move this executable and the `languages` directory to a suitable directory in your PATH for easier access:
 ```bash
 sudo cp target/release/oat /usr/local/bin/
+sudo cp -r languages /usr/local/bin/
 ```
 
 # Usage
