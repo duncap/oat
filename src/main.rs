@@ -4,6 +4,8 @@ use std::fs;
 use std::path::{Path, PathBuf};
 use std::process::{Command, Stdio};
 
+const LANGUAGES_DIR: &str = "/usr/local/bin/languages";
+
 fn main() {
     let args: Vec<String> = env::args().collect();
     if args.len() != 3 {
@@ -29,8 +31,11 @@ fn main() {
     };
 
     let resolved_language = resolve_language(language);
-    let file_path = PathBuf::from("languages").join(format!("{}.json", resolved_language));
-    let json_content = fs::read_to_string(file_path).expect("Could not read language file");
+    let file_path = PathBuf::from(LANGUAGES_DIR).join(format!("{}.json", resolved_language));
+    let json_content = fs::read_to_string(&file_path).expect(&format!(
+        "Could not read language file: {}",
+        file_path.display()
+    ));
     let mappings: Value = from_str(&json_content).expect("JSON was not well-formatted");
 
     let result = process_commands(&oatlang_code, &mappings, resolved_language);
@@ -40,11 +45,9 @@ fn main() {
     let output_file = format!("{}.{}", base_name, language.to_lowercase());
 
     if language.to_lowercase() == "bin" {
-        // Convert to C and then compile to binary
         fs::write(&output_file_c, result).expect("Unable to write C file");
         compile_and_convert_to_binary(&output_file_c, &output_file_bin);
     } else {
-        // Generate directly in the target language
         fs::write(&output_file, result).expect("Unable to write file");
         println!("Output written to {}", output_file);
     }
@@ -95,10 +98,13 @@ fn expand_command(command: &str, mappings: &Value, language: &str) -> String {
     let arguments: Vec<&str> = args_str.split(',').map(|arg| arg.trim()).collect();
 
     let template = mappings[cmd_key].as_str().unwrap_or("");
+    if template.is_empty() {
+        return format!("Invalid command format: {}", cmd_key);
+    }
+
     let mut result = template.to_string();
     for (i, arg) in arguments.iter().enumerate() {
         if arg.contains('{') {
-            // Recursive call if the argument is another command
             result = result.replace(
                 &format!("{{{}}}", i),
                 &expand_command(arg, mappings, language),
@@ -122,7 +128,6 @@ fn compile_and_convert_to_binary(output_file_c: &str, output_file_bin: &str) {
 
     if compile_status.success() {
         println!("Compiled to binary {}", output_file_bin);
-        // Remove intermediate C file
         if let Err(e) = fs::remove_file(output_file_c) {
             eprintln!(
                 "Warning: Could not delete intermediate C file {}: {}",
