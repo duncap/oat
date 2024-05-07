@@ -1,5 +1,5 @@
 # OAT (Oval Abstract Trees)
-**OAT** is an innovative, open-source protocol for cross-language compilation. It leverages a sophisticated file indexing system to compile OATLANG code into multiple popular programming languages, enhancing interoperability and code reuse across software development projects.
+**OAT** is an innovative, open-source protocol and software for cross-language compilation. It leverages a sophisticated file indexing system to compile OATLANG code into multiple popular programming languages, enhancing interoperability and code reuse across software development projects.
 
 ## Key Features
 ### 1. Cross-Language Compilation
